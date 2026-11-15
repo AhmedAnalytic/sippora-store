@@ -1,0 +1,112 @@
+/* styles.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 10% 30%, #f0f4ff, #e6ecf8);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 3D Card Effects */
+.product-card {
+  transition: transform 0.25s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1400px;
+  box-shadow: 0 25px 40px -15px rgba(0, 20, 40, 0.25), 0 10px 20px -8px rgba(0,0,0,0.15);
+}
+.product-card:hover {
+  transform: translateY(-6px) rotateX(1deg) rotateY(0.5deg);
+  box-shadow: 0 35px 55px -15px rgba(0, 30, 60, 0.35), 0 15px 25px -10px rgba(0,0,0,0.2);
+}
+
+/* 3D Image Effects */
+.mug-3d {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.2));
+}
+.mug-container:hover .mug-3d {
+  transform: rotateY(6deg) rotateX(2deg) scale(1.02);
+}
+
+/* Floating Crown Animation */
+.crown-float {
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(255, 215, 0, 0.4));
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* Color Swatches */
+.color-radio {
+  appearance: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.15s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.color-radio:checked {
+  border: 3px solid #3b82f6;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+}
+.color-radio.blue { background: #1e3a8a; }
+.color-radio.green { background: #2b6e4e; }
+.color-radio.pink { background: #e86f9e; }
+.color-radio.white { background: #f0f2f5; }
+.color-radio.black { background: #1a1c1e; }
+.color-radio.lightblue { background: #8db7d9; }
+
+/* Misc */
+.stars i { color: #f5b342; margin-right: 2px; }
+.qty-btn { transition: all 0.1s; }
+.qty-btn:active { transform: scale(0.92); background-color: #d1d5db; }
+.amazon-choice { animation: softPulse 2.5s infinite; }
+@keyframes softPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Product Image */
+.product-img {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 18px 15px rgba(0, 0, 0, 0.25));
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+.mug-container:hover .product-img {
+  transform: rotateY(5deg) rotateX(2deg) scale(1.02);
+  filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* Amazon Buttons */
+.buy-amazon-btn {
+  background: linear-gradient(to bottom, #ffd814, #f7ca00);
+  border: 1px solid #f2b200;
+  color: #111;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 200, 0, 0.35);
+}
+.buy-amazon-btn:hover {
+  background: linear-gradient(to bottom, #f7ca00, #f0b800);
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 8px 18px rgba(255, 200, 0, 0.45);
+}
+.buy-amazon-btn:active { transform: translateY(0) scale(0.99); }
+.amazon-logo-text { font-weight: 800; letter-spacing: -0.5px; color: #232f3e; }
+
+.view-on-amazon {
+  background: #232f3e;
+  color: #ffd814;
+  transition: all 0.2s ease;
+}
+.view-on-amazon:hover {
+  background: #131a22;
+  color: #ffd814;
+  box-shadow: 0 6px 16px rgba(35, 47, 62, 0.35);
+  transform: translateY(-1px);
+}

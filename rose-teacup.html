@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONEUSTAR Rose Tea Cup Set · Arawat Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Custom Romantic Background for this specific page -->
+  <style>
+    body {
+      background: radial-gradient(circle at 10% 30%, #fff0f5, #ffe4e1); /* Soft Rose Background */
+    }
+    /* Custom Radio buttons for Red and Pink */
+    .color-radio.red { background: #dc2626; }
+    .color-radio.pink { background: #f472b6; }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4 md:p-8 antialiased">
+
+  <!-- Back to Home Button -->
+  <div class="w-full max-w-6xl mb-4">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-rose-700 hover:text-rose-900 transition-colors">
+      <i class="fas fa-arrow-left"></i> Back to Store
+    </a>
+  </div>
+
+  <div class="max-w-6xl w-full grid md:grid-cols-2 gap-8 lg:gap-12 bg-white/80 backdrop-blur-sm rounded-3xl p-4 md:p-8 shadow-2xl border border-white/50">
+
+    <!-- LEFT: PRODUCT VISUAL -->
+    <div class="mug-container relative flex flex-col items-center justify-center p-2 md:p-4 bg-gradient-to-br from-rose-50 to-white rounded-3xl shadow-inner border border-white/70 min-h-[350px] md:min-h-[500px]">
+      
+      <!-- Floating Rose Accent -->
+      <div class="absolute top-3 left-4 md:top-4 md:left-6 text-3xl md:text-4xl crown-float z-10 select-none">
+        <i class="fas fa-spa text-rose-400 drop-shadow-lg"></i>
+      </div>
+
+      <!-- Image Container -->
+      <div class="relative w-full flex flex-col items-center justify-center mug-3d z-0">
+        <img
+          id="mainImage"
+          src="images/RedTeaCup.png"
+          alt="ONEUSTAR Red Rose Tea Cup and Saucer"
+          class="product-img w-full max-w-[95%] md:max-w-[95%]"
+          onerror="this.src='https://placehold.co/400x400/dc2626/ffffff?text=Rose+Tea+Cup'; this.alt='Rose Tea Cup placeholder';"
+        >
+        <div class="absolute bottom-[5%] w-3/4 h-6 bg-rose-900/10 blur-xl rounded-[50%] -z-10"></div>
+      </div>
+
+      <div class="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 w-48 md:w-64 h-6 md:h-7 bg-gradient-to-r from-rose-400 to-rose-300 rounded-full shadow-md opacity-90 flex items-center justify-center">
+        <span class="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase">Handcrafted Elegance</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: DETAILS -->
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center flex-wrap gap-2 text-sm">
+        <span class="text-gray-500">Visit the <a href="#" target="_blank" rel="noopener noreferrer" class="text-rose-700 font-medium hover:underline">ONEUSTAR Store</a></span>
+        <span class="text-gray-300">|</span>
+        <a href="https://link.amazon/B0gqzTpCs" target="_blank" rel="noopener noreferrer" class="view-on-amazon bg-rose-900 hover:bg-rose-950 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
+          <i class="fas fa-external-link-alt text-[10px]"></i> View on Amazon
+        </a>
+      </div>
+
+      <div class="flex items-center stars text-sm">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        <span class="ml-1 text-gray-700 font-medium">4.7</span>
+        <span class="text-gray-400 ml-1">(210)</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mt-1">
+        ONEUSTAR 3D Rose Tea Cup <span class="text-rose-700">and Saucer Set</span>
+      </h1>
+      <p class="text-gray-600 text-sm md:text-base">Handicraft Rose Shaped Teacup, 6 Oz, Romantic Coffee Mug for Women, Valentine's Day Gift for Her</p>
+
+      <!-- DYNAMIC PRICE BLOCK -->
+      <div class="flex items-end gap-3 mt-2 flex-wrap">
+        <span id="currentPrice" class="text-4xl font-extrabold text-gray-900">$22.99</span>
+        <!-- No original price provided in your data, so we hide the strikethrough by default -->
+        <span id="originalPrice" class="text-lg text-gray-400 line-through hidden">$22.99</span>
+        <span id="discountBadge" class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full hidden">0% off</span>
+        <span class="bg-rose-100 text-rose-800 text-xs px-3 py-1 rounded-full amazon-choice">Highly Rated</span>
+      </div>
+      <p class="text-sm text-gray-500 flex items-center gap-1"><i class="fas fa-check-circle text-green-600"></i> FREE Returns · Prime Eligible</p>
+
+      <div class="mt-4">
+        <h3 class="text-sm font-semibold text-gray-700 mb-2">Color: <span id="selectedColorName" class="font-normal text-rose-700">Red</span></h3>
+        <div class="flex flex-wrap gap-3 items-center">
+          
+          <!-- Red Color Option -->
+          <label class="cursor-pointer">
+            <input type="radio" name="mugColor" value="Red" class="color-radio red" checked 
+                   data-color-name="Red"
+                   data-price="22.99" data-original-price="22.99"
+                   data-image="images/RedTeaCup.png">
+          </label>
+          
+          <!-- Pink Color Option -->
+          <label class="cursor-pointer">
+            <input type="radio" name="mugColor" value="Pink" class="color-radio pink" 
+                   data-color-name="Pink"
+                   data-price="22.99" data-original-price="22.99"
+                   data-image="images/PinkTeaCup.png">
+          </label>
+          
+        </div>
+      </div>
+
+      <!-- About This Item -->
+      <div class="mt-3 bg-rose-50/80 p-4 rounded-xl border border-rose-100">
+        <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4 marker:text-rose-400">
+          <li><strong>Premium Quality:</strong> Made of high-quality ceramics, roasted at high temperature, polished for 8 hours to be smooth as a mirror.</li>
+          <li><strong>Perfect Set:</strong> Includes 1 cup (6 oz), 1 saucer (6" diameter), and 1 spoon (5.5" height).</li>
+          <li><strong>Exquisite Design:</strong> Features a colorful 3D rose flower theme, traditional Chinese handicraft, hand-painted with vivid color.</li>
+          <li><strong>Romantic Gift:</strong> The perfect gift for mother, grandmother, teachers, girlfriend, wife, or friends on birthdays, Valentine's Day, or Mother's Day.</li>
+        </ul>
+      </div>
+
+      <!-- QUANTITY & BUY BUTTON -->
+      <div class="flex items-center gap-3 mt-4">
+        <div class="flex items-center border border-gray-300 rounded-full bg-white shadow-sm shrink-0">
+          <button id="btnMinus" class="qty-btn w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-l-full text-xl">−</button>
+          <span id="qtyDisplay" class="w-10 text-center font-medium text-gray-800">1</span>
+          <button id="btnPlus" class="qty-btn w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-r-full text-xl">+</button>
+        </div>
+
+        <!-- Update the href below with your actual ONEUSTAR Amazon link -->
+        <a href="https://link.amazon/B0gqzTpCs" target="_blank" rel="noopener noreferrer" class="buy-amazon-btn flex-1 font-bold py-3 px-5 rounded-full flex items-center justify-center gap-2 text-center text-base">
+          <i class="fab fa-amazon text-lg"></i>
+          <span>Buy on <span class="amazon-logo-text">Amazon</span></span>
+        </a>
+      </div>
+
+      <!-- Update the href below with your actual ONEUSTAR Amazon link -->
+      <a href="https://link.amazon/B0gqzTpCs" target="_blank" rel="noopener noreferrer" class="mt-1 w-full view-on-amazon font-semibold py-3 rounded-full flex items-center justify-center gap-2 text-center">
+        <i class="fas fa-external-link-alt text-sm"></i> View Full Details on Amazon
+      </a>
+
+      <a href="https://link.amazon/B0gqzTpCs" target="_blank" rel="noopener noreferrer" class="mt-1 w-full border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-3 rounded-full transition flex items-center justify-center gap-2 text-center">
+        <i class="fas fa-heart text-rose-400"></i> Save to Wish List
+      </a>
+
+      <div class="flex justify-between text-xs text-gray-500 mt-4 pt-2 border-t border-gray-200">
+        <span><i class="fas fa-truck mr-1"></i> Free delivery</span>
+        <span><i class="fas fa-undo-alt mr-1"></i> 30-day returns</span>
+        <span><i class="fas fa-lock mr-1"></i> Secure transaction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script for Dynamic Pricing & Image Switching -->
+  <script>
+    (function() {
+      const colorRadios = document.querySelectorAll('input[name="mugColor"]');
+      const colorNameSpan = document.getElementById('selectedColorName');
+      const currentPriceEl = document.getElementById('currentPrice');
+      const originalPriceEl = document.getElementById('originalPrice');
+      const discountBadge = document.getElementById('discountBadge');
+      const mainImageEl = document.getElementById('mainImage');
+      
+      const qtyDisplay = document.getElementById('qtyDisplay');
+      const btnMinus = document.getElementById('btnMinus');
+      const btnPlus = document.getElementById('btnPlus');
+
+      let currentQty = 1;
+      let activeBasePrice = 22.99;
+      let activeOriginalPrice = 22.99;
+
+      function updatePriceUI() {
+        const totalCurrent = (activeBasePrice * currentQty).toFixed(2);
+        const totalOriginal = (activeOriginalPrice * currentQty).toFixed(2);
+        
+        currentPriceEl.textContent = `$${totalCurrent}`;
+        originalPriceEl.textContent = `$${totalOriginal}`;
+
+        // Only show discount if there actually is one
+        if (activeOriginalPrice > activeBasePrice) {
+          const discountPercent = Math.round(((activeOriginalPrice - activeBasePrice) / activeOriginalPrice) * 100);
+          discountBadge.textContent = `${discountPercent}% off`;
+          discountBadge.classList.remove('hidden');
+          originalPriceEl.classList.remove('hidden');
+        } else {
+          discountBadge.classList.add('hidden');
+          originalPriceEl.classList.add('hidden');
+        }
+      }
+
+      colorRadios.forEach(radio => {
+        radio.addEventListener('change', function(e) {
+          if (e.target.checked) {
+            colorNameSpan.textContent = e.target.dataset.colorName;
+            activeBasePrice = parseFloat(e.target.dataset.price);
+            activeOriginalPrice = parseFloat(e.target.dataset.originalPrice);
+            updatePriceUI();
+            
+            const newImageSrc = e.target.dataset.image;
+            if (newImageSrc) {
+              mainImageEl.style.opacity = '0.5';
+              setTimeout(() => {
+                mainImageEl.src = newImageSrc;
+                mainImageEl.style.opacity = '1';
+              }, 150);
+            }
+          }
+        });
+      });
+
+      btnMinus.addEventListener('click', () => {
+        if (currentQty > 1) {
+          currentQty--;
+          qtyDisplay.textContent = currentQty;
+          updatePriceUI();
+        }
+      });
+
+      btnPlus.addEventListener('click', () => {
+        if (currentQty < 10) {
+          currentQty++;
+          qtyDisplay.textContent = currentQty;
+          updatePriceUI();
+        }
+      });
+
+      const mainContainer = document.querySelector('.max-w-6xl');
+      if (mainContainer && window.innerWidth > 768) {
+        mainContainer.addEventListener('mousemove', (e) => {
+          const mug3d = document.querySelector('.mug-3d');
+          if (!mug3d) return;
+          const mugContainer = document.querySelector('.mug-container');
+          const mugRect = mugContainer.getBoundingClientRect();
+          if (e.clientX > mugRect.left && e.clientX < mugRect.right && e.clientY > mugRect.top && e.clientY < mugRect.bottom) {
+            const x = (e.clientX - mugRect.left) / mugRect.width - 0.5;
+            const y = (e.clientY - mugRect.top) / mugRect.height - 0.5;
+            mug3d.style.transform = `rotateY(${x * 8}deg) rotateX(${y * 4}deg) scale(1.02)`;
+          } else {
+            mug3d.style.transform = '';
+          }
+        });
+        mainContainer.addEventListener('mouseleave', () => {
+          const mug3d = document.querySelector('.mug-3d');
+          if (mug3d) mug3d.style.transform = '';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
